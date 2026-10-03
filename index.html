@@ -3,114 +3,140 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Glory Group — كل اللينكات</title>
-<meta name="description" content="Glory Group — كل لينكات جلوري للملابس الرياضية في مكان واحد: كتالوج، واتساب، وتواصل.">
+<title>GLORY GROUP — كل اللينكات</title>
+<meta name="description" content="GLORY GROUP — كل لينكات الشركات: Alef، Mariam Tex، Mariam Tex Print، Elegant، Elbrimo.">
+<meta name="theme-color" content="#0d2c50">
+<link rel="icon" href="assets/logo-white.png">
 <style>
   :root{
-    --bg:#0b0d10; --card:#15181d; --card2:#1c2027; --line:#262b33;
-    --txt:#f2f4f7; --muted:#9aa4b2; --accent:#e11d2e; --accent2:#ff4d5e;
+    --navy:#0d2c50; --navy-deep:#071c33; --navy-soft:#123a68;
+    --card:rgba(255,255,255,.07); --card-hi:rgba(255,255,255,.11);
+    --line:rgba(255,255,255,.14); --line-hi:rgba(255,255,255,.30);
+    --txt:#ffffff; --muted:#a8c3e2;
   }
   *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
   body{
-    margin:0; background:linear-gradient(180deg,#0b0d10 0%,#0b0d10 40%,#101318 100%);
+    background:radial-gradient(120% 60% at 50% 0%, #164478 0%, var(--navy) 45%, var(--navy-deep) 100%) fixed;
     color:var(--txt); font-family:"Segoe UI",Tahoma,system-ui,-apple-system,sans-serif;
-    min-height:100vh; padding:28px 16px 60px;
+    min-height:100vh; padding:26px 16px 40px; line-height:1.6;
   }
-  .wrap{max-width:760px;margin:0 auto}
-  header{text-align:center;margin-bottom:26px}
-  .logo{
-    display:inline-block;font-weight:800;letter-spacing:.18em;font-size:13px;
-    color:var(--accent2); border:1px solid var(--accent); border-radius:999px;
-    padding:6px 16px; margin-bottom:14px;
+  .wrap{max-width:620px;margin:0 auto}
+  header{text-align:center;margin-bottom:24px}
+  .logo{width:min(215px,58vw);height:auto;display:block;margin:0 auto 14px;
+        filter:drop-shadow(0 6px 18px rgba(0,0,0,.35))}
+  .tag{color:var(--muted);font-size:14px;margin:0}
+  .list{display:grid;gap:12px}
+
+  details.corp{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    overflow:hidden; transition:border-color .16s, background .16s;
   }
-  h1{margin:0 0 8px;font-size:30px;line-height:1.25}
-  .tag{color:var(--muted);font-size:15px;margin:0}
-  .share{
-    display:inline-flex;align-items:center;gap:8px;margin-top:16px;cursor:pointer;
-    background:var(--card);border:1px solid var(--line);color:var(--txt);
-    padding:9px 16px;border-radius:999px;font-size:14px;font-family:inherit;
+  details.corp[open]{background:var(--card-hi); border-color:var(--line-hi)}
+  details.corp summary{
+    list-style:none; cursor:pointer; display:flex; align-items:center; gap:13px;
+    padding:15px 16px; user-select:none;
   }
-  .share:hover{border-color:var(--accent)}
-  h2{
-    font-size:15px;color:var(--muted);font-weight:600;margin:30px 0 12px;
-    display:flex;align-items:center;gap:10px;
+  details.corp summary::-webkit-details-marker{display:none}
+  .badge{
+    flex:none; width:46px; height:46px; border-radius:13px; display:grid; place-items:center;
+    font-weight:800; font-size:16px; color:#0d2c50; background:var(--tile,#f0c674);
+    box-shadow:0 4px 12px rgba(0,0,0,.25); overflow:hidden;
   }
-  h2::after{content:"";flex:1;height:1px;background:var(--line)}
-  .grid{display:grid;gap:12px}
-  a.card{
-    display:block;text-decoration:none;color:inherit;background:var(--card);
-    border:1px solid var(--line);border-radius:16px;padding:16px 18px;
-    transition:.18s transform,.18s border-color,.18s background;
-  }
-  a.card:hover{transform:translateY(-2px);border-color:var(--accent);background:var(--card2)}
-  .row{display:flex;align-items:center;gap:12px}
-  .t{font-weight:700;font-size:17px}
-  .d{color:var(--muted);font-size:13.5px;margin-top:5px;line-height:1.6}
-  .arrow{margin-inline-start:auto;color:var(--accent2);font-size:18px;flex:none}
-  .tagchip{
-    display:inline-block;margin-inline-start:auto;font-size:11px;color:var(--muted);
-    border:1px solid var(--line);border-radius:999px;padding:3px 10px;flex:none;
-  }
-  footer{text-align:center;color:var(--muted);font-size:12.5px;margin-top:40px;line-height:1.9}
-  footer a{color:var(--accent2);text-decoration:none}
-  .skeleton{height:76px;border-radius:16px;background:var(--card);border:1px solid var(--line);opacity:.5}
+  .badge.img{background:#fff}
+  .badge img{width:100%; height:100%; object-fit:cover; display:block}
+  .names{flex:1; min-width:0}
+  .nm{display:block; font-weight:700; font-size:16.5px; letter-spacing:.01em}
+  .sb{display:block; color:var(--muted); font-size:12px; margin-top:1px; min-height:15px}
+  .chev{flex:none; width:20px; height:20px; opacity:.75; transition:transform .22s ease}
+  details.corp[open] .chev{transform:rotate(180deg)}
+
+  .links{border-top:1px solid var(--line); background:rgba(0,0,0,.14)}
+  a.lnk{display:flex; align-items:center; gap:12px; padding:13px 16px; text-decoration:none;
+        color:var(--txt); border-top:1px solid rgba(255,255,255,.07); transition:background .15s}
+  a.lnk:first-child{border-top:none}
+  a.lnk:hover{background:rgba(255,255,255,.07)}
+  .lico{flex:none; width:32px; height:32px; border-radius:10px; display:grid; place-items:center;
+        background:rgba(255,255,255,.10)}
+  .lico svg{width:16px; height:16px}
+  .llab{flex:1; font-weight:600; font-size:15px}
+  .arrow{flex:none; color:var(--muted); font-size:15px}
+
+  footer{text-align:center; color:var(--muted); font-size:11.5px; margin-top:26px; line-height:1.9}
+  .skeleton{height:72px; border-radius:16px; background:var(--card); border:1px solid var(--line); opacity:.6}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="logo">GLORY SPORTSWEAR</div>
-    <h1 id="pageTitle">Glory Group</h1>
-    <p class="tag" id="pageTag">كل لينكات جلوري في مكان واحد</p>
-    <button class="share" id="shareBtn">🔗 شارك الصفحة</button>
+    <img class="logo" src="assets/logo-white.png" alt="GLORY GROUP">
+    <p class="tag" id="pageTag">Contact Us</p>
   </header>
 
-  <main id="content">
-    <div class="grid"><div class="skeleton"></div><div class="skeleton"></div></div>
+  <main class="list" id="content">
+    <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
   </main>
 
   <footer>
-    <div id="updated"></div>
-    <div>© Glory Sportswear — <a href="https://wa.me/201064128434">201064128434</a></div>
+    <div dir="ltr">© GLORY GROUP</div>
   </footer>
 </div>
 
 <script>
-// data lives in links.json — edit that file only, no code changes needed
-fetch('links.json', {cache:'no-store'})
-  .then(function(r){ return r.json(); })
-  .then(render)
-  .catch(function(){ document.getElementById('content').innerHTML =
-    '<p style="text-align:center;color:#9aa4b2">مش قادر أقرأ اللينكات دلوقتي — حدّث الصفحة.</p>'; });
+/* كل اللينكات بتتقرأ من links.json — عدّل الملف ده بس، مش محتاج تلمس الكود */
+
+var ICONS = {
+  facebook: '<svg viewBox="0 0 24 24" fill="#fff"><path d="M13.5 21v-7.2h2.5l.4-2.9h-2.9V9.1c0-.8.2-1.4 1.4-1.4h1.5V5.1c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.1H8v2.9h2.5V21h3z"/></svg>',
+  instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.1" cy="6.9" r="1.15" fill="#fff" stroke="none"/></svg>',
+  web: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="12" cy="12" r="8.8"/><path d="M3.4 12h17.2M12 3.2c2.4 2.5 3.6 5.5 3.6 8.8S14.4 18.3 12 20.8c-2.4-2.5-3.6-5.5-3.6-8.8S9.6 5.7 12 3.2z"/></svg>',
+  whatsapp: '<svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2.2A9.7 9.7 0 0 0 3.6 16.7L2.3 21.7l5.2-1.3A9.7 9.7 0 1 0 12 2.2zm5.2 13.6c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.6-.1-1.4-.5-3-1.7-4.2-3.3-.9-1.2-1.4-2.4-1.4-3.2 0-.8.5-1.6 1-1.9.2-.1.5-.2.7-.1.2 0 .3.1.4.4l.6 1.4c.1.2 0 .4-.1.5l-.4.5c-.1.2-.2.3 0 .6.4.7 1.4 1.8 2.3 2.2.3.1.4.1.6-.1l.5-.6c.1-.2.3-.2.5-.1l1.4.7c.3.1.4.3.4.5 0 .3 0 .9-.3 1.4z"/></svg>',
+  tiktok: '<svg viewBox="0 0 24 24" fill="#fff"><path d="M12.9 2h2.55a5.3 5.3 0 0 0 1.72 3.06 5.4 5.4 0 0 0 3.03 1.17v2.6a7.9 7.9 0 0 1-4.5-1.55v6.5a5.65 5.65 0 1 1-5.65-5.65c.18 0 .35.01.52.03v2.68a3 3 0 1 0 2.33 2.94V2z"/></svg>',
+  catalog: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><path d="M4 5.4A1.4 1.4 0 0 1 5.4 4H10a2 2 0 0 1 2 2v13.2a2 2 0 0 0-2-1.8H5.4A1.4 1.4 0 0 1 4 16V5.4z"/><path d="M20 5.4A1.4 1.4 0 0 0 18.6 4H14a2 2 0 0 0-2 2v13.2a2 2 0 0 1 2-1.8h4.6A1.4 1.4 0 0 0 20 16V5.4z"/></svg>',
+  link: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9"><path d="M10.6 13.4a4 4 0 0 0 5.7 0l2.6-2.6a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M13.4 10.6a4 4 0 0 0-5.7 0l-2.6 2.6a4 4 0 0 0 5.7 5.7l1-1"/></svg>',
+  chevron: '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M6 9.5 12 15.5 18 9.5"/></svg>'
+};
 
 function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, function(c){
   return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]; }); }
 
 function render(data){
-  if (data.title) document.getElementById('pageTitle').textContent = data.title;
+  if (data.title) document.title = data.title + ' — كل اللينكات';
   if (data.tagline) document.getElementById('pageTag').textContent = data.tagline;
-  if (data.updated) document.getElementById('updated').textContent = 'آخر تحديث: ' + data.updated;
 
   var out = '';
-  (data.sections || []).forEach(function(sec){
-    out += '<h2>' + esc(sec.name) + '</h2><div class="grid">';
-    (sec.links || []).forEach(function(l){
-      var badge = l.tag ? '<span class="tagchip">' + esc(l.tag) + '</span>' : '<span class="arrow">›</span>';
-      out += '<a class="card" href="' + esc(l.url) + '" target="_blank" rel="noopener">' +
-               '<div class="row"><span class="t">' + esc(l.title) + '</span>' + badge + '</div>' +
-               (l.desc ? '<div class="d">' + esc(l.desc) + '</div>' : '') +
-             '</a>';
-    });
-    out += '</div>';
-  });
-  document.getElementById('content').innerHTML = out || '<p style="text-align:center;color:#9aa4b2">لا توجد لينكات بعد.</p>';
-}
+  (data.sections||[]).forEach(function(sec){
+    var tile = sec.logo
+      ? '<span class="badge img"><img src="' + esc(sec.logo) + '" alt="' + esc(sec.name) + '" loading="lazy"></span>'
+      : '<span class="badge" style="--tile:' + esc(sec.color||'#f0c674') + '">' +
+          esc(sec.badge || sec.name.charAt(0)) + '</span>';
+    out += '<details class="corp" id="' + esc(sec.id||sec.name) + '">' +
+             '<summary>' + tile +
+               '<span class="names"><span class="nm">' + esc(sec.name) + '</span>' +
+                 (sec.sub ? '<span class="sb">' + esc(sec.sub) + '</span>'
+                          : '<span class="sb">&nbsp;</span>') + '</span>' +
+               ICONS.chevron +
+             '</summary><div class="links">';
 
-document.getElementById('shareBtn').addEventListener('click', function(){
-  var url = location.href;
-  if (navigator.share) { navigator.share({title:document.title, url:url}).catch(function(){}); return; }
-  window.open('https://wa.me/?text=' + encodeURIComponent(document.title + ' ' + url), '_blank');
-});
+    (sec.links||[]).forEach(function(l){
+      out += '<a class="lnk" href="' + esc(l.url) + '" target="_blank" rel="noopener">' +
+               '<span class="lico">' + (ICONS[l.type] || ICONS.link) + '</span>' +
+               '<span class="llab">' + esc(l.label || 'Link') + '</span>' +
+               '<span class="arrow">‹</span></a>';
+    });
+    out += '</div></details>';
+  });
+  document.getElementById('content').innerHTML = out;
+
+  // لينك مباشر لشركة معينة: مثال /#alef
+  var h = (location.hash||'').replace('#','');
+  if (h) { var el = document.getElementById(h); if (el && el.tagName === 'DETAILS') { el.open = true;
+           el.scrollIntoView({block:'center'}); } }
+}
+fetch('links.json', {cache:'no-store'})
+  .then(function(r){ return r.json(); })
+  .then(render)
+  .catch(function(){ document.getElementById('content').innerHTML =
+    '<p style="text-align:center;color:#a8c3e2">مش قادر أقرأ اللينكات دلوقتي — حدّث الصفحة.</p>'; });
 </script>
 </body>
 </html>

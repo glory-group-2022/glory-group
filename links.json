@@ -1,27 +1,150 @@
 {
-  "title": "Glory Group",
-  "tagline": "كل لينكات جلوري في مكان واحد",
+  "title": "GLORY GROUP",
+  "tagline": "Contact Us",
   "updated": "2026-10-03",
   "sections": [
     {
-      "name": "الكتالوج والمنتجات",
+      "id": "mariam-tex",
+      "name": "Mariam Tex",
+      "sub": "Clothing Factory",
+      "badge": "M",
+      "color": "#9ecbff",
+      "logo": "assets/logos/mariam-tex.jpg",
       "links": [
         {
-          "title": "كتالوج Glory 2026",
-          "desc": "كتالوج المنتجات كامل",
-          "url": "https://mohamedshindy113-sudo.github.io/glory-catalog/",
-          "tag": "كتالوج"
+          "type": "web",
+          "label": "Website",
+          "url": "https://mariamtex.com"
+        },
+        {
+          "type": "instagram",
+          "label": "Instagram",
+          "url": "https://www.instagram.com/mariam.tex"
+        },
+        {
+          "type": "facebook",
+          "label": "Facebook",
+          "url": "https://www.facebook.com/mariam.texeg"
         }
       ]
     },
     {
-      "name": "التواصل",
+      "id": "mariam-tex-print",
+      "name": "Mariam Tex Print",
+      "sub": "Sublimation Printing",
+      "badge": "P",
+      "color": "#b8e0c2",
+      "logo": "assets/logos/mariam-tex-print.jpg",
       "links": [
         {
-          "title": "واتساب الأوردرات",
-          "desc": "اطلب أو استفسر على واتساب",
-          "url": "https://wa.me/201064128434",
-          "tag": "واتساب"
+          "type": "instagram",
+          "label": "Instagram",
+          "url": "https://www.instagram.com/mariam.tex_print"
+        },
+        {
+          "type": "facebook",
+          "label": "Facebook",
+          "url": "https://www.facebook.com/mariamtexprint"
+        }
+      ]
+    },
+    {
+      "id": "glory",
+      "name": "Glory",
+      "sub": "Sportswear",
+      "badge": "G",
+      "color": "#e11d2e",
+      "logo": "assets/logos/glory.jpg",
+      "links": [
+        {
+          "type": "web",
+          "label": "Website",
+          "url": "https://www.glory-sportswear.com/"
+        },
+        {
+          "type": "catalog",
+          "label": "GLORY 2027 Catalog",
+          "url": "https://www.glory-sportswear.com/pages/b2b-catalogue"
+        },
+        {
+          "type": "instagram",
+          "label": "Instagram",
+          "url": "https://www.instagram.com/glory.sportswear"
+        },
+        {
+          "type": "facebook",
+          "label": "Facebook",
+          "url": "https://www.facebook.com/glorysportswear1"
+        }
+      ]
+    },
+    {
+      "id": "alef",
+      "name": "Alef",
+      "sub": "Casual Wear",
+      "badge": "A",
+      "color": "#f0c674",
+      "logo": "assets/logos/alef.png",
+      "links": [
+        {
+          "type": "web",
+          "label": "Website",
+          "url": "https://alefcasualwear.com"
+        },
+        {
+          "type": "instagram",
+          "label": "Instagram",
+          "url": "https://www.instagram.com/alef_casual_wear"
+        },
+        {
+          "type": "facebook",
+          "label": "Facebook",
+          "url": "https://www.facebook.com/share/1CDtcRnHHx/"
+        }
+      ]
+    },
+    {
+      "id": "elegant",
+      "name": "Elegant",
+      "sub": "Sportswear",
+      "badge": "E",
+      "color": "#f7b8c4",
+      "logo": "assets/logos/elegant.jpg",
+      "links": [
+        {
+          "type": "web",
+          "label": "Website",
+          "url": "https://elegantsportswear.com"
+        },
+        {
+          "type": "instagram",
+          "label": "Instagram",
+          "url": "https://www.instagram.com/elegant_sportswear.eg"
+        },
+        {
+          "type": "facebook",
+          "label": "Facebook",
+          "url": "https://www.facebook.com/Elegantsportswear"
+        }
+      ]
+    },
+    {
+      "id": "el-primo",
+      "name": "El Primo",
+      "sub": "Sportswear",
+      "badge": "El",
+      "color": "#cdb4f6",
+      "logo": "assets/logos/el-primo.jpg",
+      "links": [
+        {
+          "type": "facebook",
+          "label": "Facebook",
+          "url": "https://www.facebook.com/61575940336219/"
+        },
+        {
+          "type": "whatsapp",
+          "label": "WhatsApp Group",
+          "url": "https://chat.whatsapp.com/DLKUb1A1uh1JbnfstkiaHx"
         }
       ]
     }

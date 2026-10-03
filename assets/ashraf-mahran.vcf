@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Mahran;Ashraf;;;
+FN:Ashraf Mahran
+ORG:GLORY GROUP
+TITLE:Founder & CEO
+TEL;TYPE=CELL,VOICE:+201064128434
+EMAIL;TYPE=WORK,INTERNET:ashraf.glory22@gmail.com
+URL:https://glory-group-2022.github.io/glory-group/
+ADR;TYPE=WORK:;;Dokki;Giza;;;Egypt
+ADR;TYPE=OTHER:;;Al Moneeb;Giza;;;Egypt
+NOTE:Factory - Al Moneeb\, Giza
+END:VCARD
