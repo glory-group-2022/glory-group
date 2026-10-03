@@ -50,8 +50,8 @@
     },
     {
       "id": "glory",
-      "name": "Glory",
-      "sub": "Sportswear",
+      "name": "Glory Sportswear",
+      "sub": "Sportswear Brand",
       "badge": "G",
       "color": "#e11d2e",
       "logo": "assets/logos/glory.jpg",
@@ -105,8 +105,8 @@
     },
     {
       "id": "elegant",
-      "name": "Elegant",
-      "sub": "Sportswear",
+      "name": "Elegant Sportswear",
+      "sub": "Sportswear Brand",
       "badge": "E",
       "color": "#f7b8c4",
       "logo": "assets/logos/elegant.jpg",
