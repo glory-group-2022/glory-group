@@ -1,0 +1,29 @@
+{
+  "title": "Glory Group",
+  "tagline": "كل لينكات جلوري في مكان واحد",
+  "updated": "2026-10-03",
+  "sections": [
+    {
+      "name": "الكتالوج والمنتجات",
+      "links": [
+        {
+          "title": "كتالوج Glory 2026",
+          "desc": "كتالوج المنتجات كامل",
+          "url": "https://mohamedshindy113-sudo.github.io/glory-catalog/",
+          "tag": "كتالوج"
+        }
+      ]
+    },
+    {
+      "name": "التواصل",
+      "links": [
+        {
+          "title": "واتساب الأوردرات",
+          "desc": "اطلب أو استفسر على واتساب",
+          "url": "https://wa.me/201064128434",
+          "tag": "واتساب"
+        }
+      ]
+    }
+  ]
+}

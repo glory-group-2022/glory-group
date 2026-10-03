@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glory Group — كل اللينكات</title>
+<meta name="description" content="Glory Group — كل لينكات جلوري للملابس الرياضية في مكان واحد: كتالوج، واتساب، وتواصل.">
+<style>
+  :root{
+    --bg:#0b0d10; --card:#15181d; --card2:#1c2027; --line:#262b33;
+    --txt:#f2f4f7; --muted:#9aa4b2; --accent:#e11d2e; --accent2:#ff4d5e;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+  body{
+    margin:0; background:linear-gradient(180deg,#0b0d10 0%,#0b0d10 40%,#101318 100%);
+    color:var(--txt); font-family:"Segoe UI",Tahoma,system-ui,-apple-system,sans-serif;
+    min-height:100vh; padding:28px 16px 60px;
+  }
+  .wrap{max-width:760px;margin:0 auto}
+  header{text-align:center;margin-bottom:26px}
+  .logo{
+    display:inline-block;font-weight:800;letter-spacing:.18em;font-size:13px;
+    color:var(--accent2); border:1px solid var(--accent); border-radius:999px;
+    padding:6px 16px; margin-bottom:14px;
+  }
+  h1{margin:0 0 8px;font-size:30px;line-height:1.25}
+  .tag{color:var(--muted);font-size:15px;margin:0}
+  .share{
+    display:inline-flex;align-items:center;gap:8px;margin-top:16px;cursor:pointer;
+    background:var(--card);border:1px solid var(--line);color:var(--txt);
+    padding:9px 16px;border-radius:999px;font-size:14px;font-family:inherit;
+  }
+  .share:hover{border-color:var(--accent)}
+  h2{
+    font-size:15px;color:var(--muted);font-weight:600;margin:30px 0 12px;
+    display:flex;align-items:center;gap:10px;
+  }
+  h2::after{content:"";flex:1;height:1px;background:var(--line)}
+  .grid{display:grid;gap:12px}
+  a.card{
+    display:block;text-decoration:none;color:inherit;background:var(--card);
+    border:1px solid var(--line);border-radius:16px;padding:16px 18px;
+    transition:.18s transform,.18s border-color,.18s background;
+  }
+  a.card:hover{transform:translateY(-2px);border-color:var(--accent);background:var(--card2)}
+  .row{display:flex;align-items:center;gap:12px}
+  .t{font-weight:700;font-size:17px}
+  .d{color:var(--muted);font-size:13.5px;margin-top:5px;line-height:1.6}
+  .arrow{margin-inline-start:auto;color:var(--accent2);font-size:18px;flex:none}
+  .tagchip{
+    display:inline-block;margin-inline-start:auto;font-size:11px;color:var(--muted);
+    border:1px solid var(--line);border-radius:999px;padding:3px 10px;flex:none;
+  }
+  footer{text-align:center;color:var(--muted);font-size:12.5px;margin-top:40px;line-height:1.9}
+  footer a{color:var(--accent2);text-decoration:none}
+  .skeleton{height:76px;border-radius:16px;background:var(--card);border:1px solid var(--line);opacity:.5}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">GLORY SPORTSWEAR</div>
+    <h1 id="pageTitle">Glory Group</h1>
+    <p class="tag" id="pageTag">كل لينكات جلوري في مكان واحد</p>
+    <button class="share" id="shareBtn">🔗 شارك الصفحة</button>
+  </header>
+
+  <main id="content">
+    <div class="grid"><div class="skeleton"></div><div class="skeleton"></div></div>
+  </main>
+
+  <footer>
+    <div id="updated"></div>
+    <div>© Glory Sportswear — <a href="https://wa.me/201064128434">201064128434</a></div>
+  </footer>
+</div>
+
+<script>
+// data lives in links.json — edit that file only, no code changes needed
+fetch('links.json', {cache:'no-store'})
+  .then(function(r){ return r.json(); })
+  .then(render)
+  .catch(function(){ document.getElementById('content').innerHTML =
+    '<p style="text-align:center;color:#9aa4b2">مش قادر أقرأ اللينكات دلوقتي — حدّث الصفحة.</p>'; });
+
+function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, function(c){
+  return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]; }); }
+
+function render(data){
+  if (data.title) document.getElementById('pageTitle').textContent = data.title;
+  if (data.tagline) document.getElementById('pageTag').textContent = data.tagline;
+  if (data.updated) document.getElementById('updated').textContent = 'آخر تحديث: ' + data.updated;
+
+  var out = '';
+  (data.sections || []).forEach(function(sec){
+    out += '<h2>' + esc(sec.name) + '</h2><div class="grid">';
+    (sec.links || []).forEach(function(l){
+      var badge = l.tag ? '<span class="tagchip">' + esc(l.tag) + '</span>' : '<span class="arrow">›</span>';
+      out += '<a class="card" href="' + esc(l.url) + '" target="_blank" rel="noopener">' +
+               '<div class="row"><span class="t">' + esc(l.title) + '</span>' + badge + '</div>' +
+               (l.desc ? '<div class="d">' + esc(l.desc) + '</div>' : '') +
+             '</a>';
+    });
+    out += '</div>';
+  });
+  document.getElementById('content').innerHTML = out || '<p style="text-align:center;color:#9aa4b2">لا توجد لينكات بعد.</p>';
+}
+
+document.getElementById('shareBtn').addEventListener('click', function(){
+  var url = location.href;
+  if (navigator.share) { navigator.share({title:document.title, url:url}).catch(function(){}); return; }
+  window.open('https://wa.me/?text=' + encodeURIComponent(document.title + ' ' + url), '_blank');
+});
+</script>
+</body>
+</html>
