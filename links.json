@@ -127,26 +127,6 @@
           "url": "https://www.facebook.com/Elegantsportswear"
         }
       ]
-    },
-    {
-      "id": "el-primo",
-      "name": "El Primo",
-      "sub": "Sportswear",
-      "badge": "El",
-      "color": "#cdb4f6",
-      "logo": "assets/logos/el-primo.jpg",
-      "links": [
-        {
-          "type": "facebook",
-          "label": "Facebook",
-          "url": "https://www.facebook.com/61575940336219/"
-        },
-        {
-          "type": "whatsapp",
-          "label": "WhatsApp Group",
-          "url": "https://chat.whatsapp.com/DLKUb1A1uh1JbnfstkiaHx"
-        }
-      ]
     }
   ]
 }
